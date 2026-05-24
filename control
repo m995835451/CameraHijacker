@@ -1,0 +1,8 @@
+Package: com.m995835451.camerahijacker
+Name: CameraHijacker
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: iOS 摄像头劫持插件
+Maintainer: m995835451
+Author: m995835451
+Section: Tweaks
