@@ -7,13 +7,17 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Theos
+      - name: Install Theos and SDK
         run: |
+          # 克隆完整的 Theos (包含子模块)
           git clone --recursive https://github.com/theos/theos.git $HOME/theos
+          # 设置环境变量
           echo "THEOS=$HOME/theos" >> $GITHUB_ENV
+          # 安装 iOS 13.7 SDK (作为替代)
+          $HOME/theos/bin/install-sdk iPhoneOS13.7
       - name: Build Package
         run: |
-          # 关键修复：显式指定 THEOS 路径并传递给 make
+          # 显式设置 THEOS 路径并编译
           export THEOS="$HOME/theos"
           make package
       - name: Upload deb
