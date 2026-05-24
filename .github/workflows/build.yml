@@ -11,10 +11,6 @@ jobs:
         run: |
           git clone --recursive https://github.com/theos/theos.git $HOME/theos
           echo "THEOS=$HOME/theos" >> $GITHUB_ENV
-          echo "THEOS_SDK_DIR=$HOME/theos/sdks" >> $GITHUB_ENV
-      - name: Install iOS SDK
-        run: |
-          $HOME/theos/bin/install-sdk iPhoneOS13.7
       - name: Build Package
         run: |
           cd $GITHUB_WORKSPACE
