@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: theos/theos:latest
+      image: theos/build:latest
     steps:
       - uses: actions/checkout@v4
       - name: Build Package
